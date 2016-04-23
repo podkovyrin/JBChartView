@@ -1130,6 +1130,7 @@ static NSInteger const kJBLineChartUnselectedLineIndex = -1;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesBegan:touches withEvent:event];
 	UITouch *touch = [touches anyObject];
 	CGPoint touchPoint = [self clampPoint:[touch locationInView:self.linesView] toBounds:self.linesView.bounds padding:[self padding]];
 	if (self.showsLineSelection)
@@ -1143,16 +1144,19 @@ static NSInteger const kJBLineChartUnselectedLineIndex = -1;
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesMoved:touches withEvent:event];
 	[self touchesBeganOrMovedWithTouches:touches];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesEnded:touches withEvent:event];
 	[self touchesEndedOrCancelledWithTouches:touches];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [super touchesCancelled:touches withEvent:event];
 	[self touchesEndedOrCancelledWithTouches:touches];
 }
 
